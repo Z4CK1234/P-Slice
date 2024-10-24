@@ -17,7 +17,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  buildLinux:
+  buildandroid:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -47,10 +47,10 @@ jobs:
       - name: Publish Artifact
         uses: actions/upload-artifact@v4.3.4
         with:
-          name: linuxBuild
-          path: 'export/PE0.6.3/release/linux/bin'
-  buildWindows:
-    runs-on: windows-latest
+          name: AndroidBuild
+          path: 'export/PE0.6.3/release/Android/bin'
+  buildAndroid:
+    runs-on: android
 
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -76,8 +76,8 @@ jobs:
       - name: Publish Artifact
         uses: actions/upload-artifact@v4.3.4
         with:
-          name: windowsBuild
-          path: export/PE0.6.3/release/windows/bin
+          name: androidBuild
+          path: export/PE0.6.3/release/android/bin
   buildMac:
     runs-on: macos-12
 
